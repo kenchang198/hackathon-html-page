@@ -1,1 +1,2 @@
 # hackathon-html-page
+init
