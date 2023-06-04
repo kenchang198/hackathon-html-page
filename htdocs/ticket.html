@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Hackathon</title>
 </head>
 
@@ -48,17 +48,26 @@
         </div>
         
         <div class="mt-5">
-            <p>コメント</p>
+            <p class="mb-3"><b>コメント</b></p>
+            <div class="comment-wrapper">
+                <p>
+                    山田太郎
+                    <span class="ps-3">2023/06/03 8:00</span>
+                    <a class="" href="">削除</a>
+                </p>
+                
+                <textarea readonly class="comment mb-3 form-control" name="" id="" cols="20" rows="3">コメントコメントコメントコメントコメントコメントコメントコメント</textarea>
+                <div class="mb-3">
+                    <button style="display:none;" class="comment-save btn btn-primary px-3">保存</button>
+                    <button class="comment-edit btn btn-primary px-3">編集</button>
+                </div>
+            </div>
+
             <div class="mb-4">
-                <textarea class="form-control" name="" id="" cols="20" rows="3"></textarea>
-            </div>
-            <div class="text-bd mb-3">
-                ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br>
-                ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-            </div>
-            <div class="text-bd mb-3">
-                ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br>
-                ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+                <textarea class="mb-3 form-control" name="" id="" cols="20" rows="3"></textarea>
+                <div class="mb-3">
+                    <a class="btn btn-primary px-3" href="ticket_create.html">追加</a>
+                </div>
             </div>
         </div>
 
@@ -68,6 +77,46 @@
             <button class="btn btn-danger px-3">チケットを削除する</button>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const comment = document.querySelectorAll('.comment');
+            const commentEditBtn = document.querySelectorAll('.comment-edit');
+            const commentSaveBtn = document.querySelectorAll('.comment-save');
+
+            // コメント 編集ボタン
+            commentEditBtn.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    comment.forEach(element => {
+                        element.readOnly = false;
+                    });
+                    commentEditBtn[index].style.display = 'none';
+                    commentSaveBtn[index].style.display = 'block';
+                });
+            });
+
+            // コメント　保存ボタン
+            commentSaveBtn.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    comment.forEach(element => {
+                        element.readOnly = true;
+                    });
+                    commentSaveBtn[index].style.display = 'none';
+                    commentEditBtn[index].style.display = 'block';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const editLinks = document.querySelectorAll('.edit');
+
+            editLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // デフォルトのリンク動作をキャンセル
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Hackathon</title>
 </head>
 
@@ -29,9 +29,13 @@
                 <input type="text" name="project_name" class="form-control">
             </div>
             <div class="mb-4">
-                <label
-                el for="responsible_person" class="form-label">責任者</label>
-                <input type="text" name="responsible_person" class="form-control">
+                <label for="responsible_person" class="form-label">責任者</label>
+                <select class="form-select" aria-label="">
+                    <option selected>-</option>
+                    <option value="1">笹本健</option>
+                    <option value="2">山田太郎</option>
+                    <option value="3">鈴木一郎</option>
+                </select>
             </div>
             <div class="mb-4">
                 <label for="start_date" class="form-label">開始日</label>
@@ -41,9 +45,8 @@
                 <label for="end_date" class="form-label">期日</label>
                 <input type="date" name="end_date" class="form-control">
             </div>
-
-            <!-- メンバーチェックボックス選択 -->
             <div class="mb-4">
+                <label for="start_date" class="form-label">メンバー</label>
                 <div class="mb-3">
                     <input type="checkbox" class="form-check-input" id="select-all">
                     <label for="select-all" class="form-check-label">全て</label>
@@ -128,8 +131,6 @@
                     });
                 }
             });
-
-            
         </script>
 </body>
 

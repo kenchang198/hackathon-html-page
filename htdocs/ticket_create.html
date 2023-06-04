@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Hackathon</title>
 </head>
 
@@ -23,15 +23,28 @@
                 <li class="breadcrumb-item active" aria-current="page">新規チケット</li>
             </ol>
         </nav>
-        <!-- <h1>（株）ABC サイトリニューアル</h1> -->
+        
         <form enctype="multipart/form-data" class="mt-5 entry-form" action="prj.html" method="post">
             
             <div class="mb-4">
                 <label for="project_name" class="form-label">チケット名</label>
                 <input type="text" name="project_name" class="form-control">
             </div>
+
             <div class="mb-4">
-                <label for="start_date" class="form-label">作成日</label>
+                <label for="responsible" class="form-label pe-2">担当</label>
+                <div>
+                    <select name="responsible" id="responsible" class="form-control">
+                        <option value="0">-</option>
+                        <option value="1">笹本 健</option>
+                        <option value="2">山田太郎</option>
+                        <option value="3">鈴木一郎</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="start_date" class="form-label">開始日</label>
                 <input type="date" name="start_date" class="form-control">
             </div>
             <div class="mb-4">
@@ -39,10 +52,9 @@
                 <input type="date" name="end_date" class="form-control">
             </div>
             <div class="mb-4">
-                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                <label for="content" class="form-label">本文</label>
+                <textarea class="form-control" name="" id="content" cols="30" rows="10"></textarea>
             </div>
-            <!-- プロジェクトメンバー -->
-            <!-- プルダウンでメンバー選択できるようにする -->
             <div class="mb-4">
                 <label for="user_name" class="form-label pe-2">メンバー</label>
                 <div>
@@ -57,15 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mb-4 member-list">
-                <!-- <p>追加するメンバー一覧</p> -->
-                <!-- <p class="member-name">
-                    <span>笹本 健</span>
-                    <input type="hidden" name="user_name[]" class="form-control" value="1">
-                    <a class="ps-3" href="javascript:void(0)">削除</a>
-                </p> -->
-            </div>
-            
+            <div class="mb-4 member-list"></div>
             <div class="d-flex justify-content-center complete-btn-grp pt-5 mb-5">
                 <button type="submit" class="btn btn-primary me-3"><b>保存</b></button>
                 <div><a class="text-light btn btn-secondary me-3" href="prj.html"><b>戻る</b></a></div>
