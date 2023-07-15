@@ -34,12 +34,29 @@
             <div>
                 <p>開始日: 2023/05/01　期日: 2023/05/31　作成者: 笹本 健　更新者: 笹本 健</p>
             </div>
+            
+            <form class="t-status mb-4">
+                <label for="responsible" class="form-label pe-2">ステータス : </label>
+                
+                <div class="d-flex justify-content-end">
+                    <select name="responsible" id="responsible" class="me-2 form-control">
+                        <option value="1">未対応</option>
+                        <option value="2">対応中</option>
+                        <option value="3">完了</option>
+                    </select>
+                    <div>
+                    <button class="btn btn-primary px-3" type="submit">更新</button>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="mb-1 ps-2">
+                <a href="">編集</a>
+            </div>
+
             <div class="text-bd mb-3">
                 ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br>
                 ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-            </div>
-            <div class="pe-2 text-end">
-                <a href="">編集</a>
             </div>
         </div>
         <div class="mt-3">
@@ -73,13 +90,11 @@
                 </ul>
             </div>
         </div>
-        <div class="mt-5 mb-3">
-            <a class="btn btn-secondary px-3" href="prj.html">戻る</a>
-        </div>
         <div class="text-end mb-5">
-            <button class="btn btn-primary px-3">チケットを完了にする</button>
-            <button class="btn btn-primary px-3">実施中に戻す</button>
             <button class="btn btn-danger px-3">チケットを削除する</button>
+        </div>
+        <div class="mt-5 mb-5">
+            <a class="btn btn-secondary px-3" href="prj.html">戻る</a>
         </div>
     </div>
     <script>
