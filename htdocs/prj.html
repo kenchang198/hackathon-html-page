@@ -44,7 +44,35 @@
             <div class="text-end mb-3">
                 <a href="">プロジェクト編集</a>
             </div>
-            <p>チケット一覧</p>
+            <form action="" class="t-list-search mb-4">
+                
+                <div class="d-flex justify-content-end align-items-center">
+                    
+                    <label for="">担当者</label>
+                    <div class="ms-1">
+                        <select name="responsible" id="responsible" class="me-2 form-control">
+                            <option value="1">全て</option>
+                            <option value="1">自分</option>
+                        </select>
+                    </div>
+                    
+                    <div class="ms-3">
+                        <label for="">ステータス</label>
+                    </div>
+                    <div class="ms-1">
+                        <select name="responsible" id="responsible" class="me-2 form-control">
+                            <option value="1">全て</option>
+                            <option value="1">未対応</option>
+                            <option value="2">対応中</option>
+                            <option value="3">完了</option>
+                        </select>
+                    </div>
+
+                    <div class="ms-3">
+                        <button class="btn btn-primary px-3" type="submit">再表示</button>
+                    </div>
+                </div>
+            </form>
             <table class="mb-5 table table-condensed">
                 <thead>
                     <tr class="bg-light">
@@ -75,7 +103,7 @@
                         <td class="ps-2">2023/06/01</td>
                         <td class="ps-2">2023/06/15</td>
                         <td class="ps-2">笹本 健</td>
-                        <td class="ps-2">実施中</td>
+                        <td class="ps-2">対応中</td>
                     </tr>
                 </tbody>
             </table>
