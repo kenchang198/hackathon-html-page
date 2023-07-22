@@ -67,13 +67,13 @@
         <div class="mt-5 comments">
             <p class="mb-3"><b>コメント</b></p>
             
-            <div class="comment-wrapper mt-5">
+            <div class="comment-wrapper mt-4">
                 <p>
                     笹本健
                     <span class="text-black-50 ps-3">2023/06/03 8:00</span>
                     <!-- <a class="" href="">削除</a> -->
                 </p>
-                <textarea readonly class="comment mb-2 form-control" name="" id="" cols="20" rows="3">こんにちは、プロジェクトの進捗を報告します。タスクの進行状況は以下の通りです。
+                <textarea readonly class="comment form-control mb-2 auto-resize-textarea">こんにちは、プロジェクトの進捗を報告します。タスクの進行状況は以下の通りです。
                 </textarea>
                 <!-- <div class="mb-3">
                     <button style="display:none;" class="comment-save btn btn-primary px-3">保存</button>
@@ -81,13 +81,13 @@
                 </div> -->
             </div>
 
-            <div class="comment-wrapper mt-5">
+            <div class="comment-wrapper mt-4">
                 <p>
                     山田太郎
                     <span class="text-black-50 ps-3">2023/06/03 8:00</span>
                     <a class="" href="">削除</a>
                 </p>
-                <textarea readonly class="comment form-control mb-2" name="" id="" cols="20" rows="3">現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。
+                <textarea readonly class="comment form-control mb-2 auto-resize-textarea">現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。
                 </textarea>
                 <div class="text-end">
                     <button style="display:none;" class="comment-save btn btn-primary px-3">保存</button>
@@ -96,13 +96,13 @@
 
             </div>
 
-            <div class="comment-wrapper mt-5">
+            <div class="comment-wrapper mt-4 border-none">
                 <p>
                     笹本健
                     <span class="text-black-50 ps-3">2023/06/03 8:00</span>
                     <!-- <a class="" href="">削除</a> -->
                 </p>
-                <textarea readonly class="comment mb-2 form-control" name="" id="" cols="20" rows="3">了解しました、ありがとうございます。進捗と問題についての報告、そしてチームメンバーとの協力に感謝します。新しいライブラリの統合がうまく進むことを願っています。もしさらなるサポートや質問があれば、遠慮なくお知らせください。</textarea>
+                <textarea readonly class="comment mb-2 form-control auto-resize-textarea">了解しました、ありがとうございます。進捗と問題についての報告、そしてチームメンバーとの協力に感謝します。新しいライブラリの統合がうまく進むことを願っています。もしさらなるサポートや質問があれば、遠慮なくお知らせください。</textarea>
                 <!-- <div class="mb-3">
                     <button style="display:none;" class="comment-save btn btn-primary px-3">保存</button>
                     <button class="comment-edit btn btn-primary px-3">編集</button>
@@ -110,7 +110,8 @@
             </div>
             
             <div class="comment-add-wrapper">
-                <textarea class="comment mb-2 form-control" name="" id="" cols="20" rows="3"></textarea>
+                <p>コメントを追加</p>
+                <textarea class="comment mb-2 form-control auto-resize-textarea" name=""></textarea>
                 <div class="mb-3 text-end">
                     <a class="btn btn-primary px-3" href="ticket_create.html">追加</a>
                 </div>
@@ -170,6 +171,27 @@
                 });
             });
         });
+
+        function autoResizeTextarea(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        // 投稿されたコメントの文字数に合わせてテキストエリアの高さを調整する
+        window.addEventListener('load', function() {
+            const autoResizeTextareas = document.querySelectorAll('.auto-resize-textarea');
+            autoResizeTextareas.forEach(textarea => autoResizeTextarea(textarea));
+        });
+
+        // 新たに追加するコメントの文字数に合わせてテキストエリアの高さを調整する
+        const autoResizeTextareas = document.querySelectorAll('.auto-resize-textarea');
+        
+        autoResizeTextareas.forEach(textarea => {
+            textarea.addEventListener('input', function() {
+            autoResizeTextarea(textarea);
+            });
+        });
+        
     </script>
 </body>
 
