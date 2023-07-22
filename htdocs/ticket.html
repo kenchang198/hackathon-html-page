@@ -35,8 +35,6 @@
                 <ul>
                     <li>開始日: 2023/05/01</li>
                     <li class="pt-1">期日　: 2023/05/31</li>
-                    <li class="pt-3">作成者: 笹本 健</li>
-                    <li class="pt-1">更新者: 笹本 健</li>
                 </ul>
             </div>
             
@@ -55,35 +53,69 @@
             </form>
             
             <div class="t-content text-bd mb-3">
-                ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br>
-                ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+                ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
             </div>
-            <div class="text-end mb-5">
+            <div class="text-end">
                 <a href="">編集</a>
             </div>
+            <div class="ps-3 text-black-50">
+                <p>作成日: 2023/07/01　笹本 健 </p>
+                <p >更新日: 2023/07/01　笹本 健</p>
+            </div>
         </div>
-        <div class="mt-3">
+
+        <div class="mt-5 comments">
             <p class="mb-3"><b>コメント</b></p>
-            <div class="comment-wrapper">
+            
+            <div class="comment-wrapper mt-5">
                 <p>
-                    山田太郎
-                    <span class="ps-3">2023/06/03 8:00</span>
-                    <a class="" href="">削除</a>
+                    笹本健
+                    <span class="text-black-50 ps-3">2023/06/03 8:00</span>
+                    <!-- <a class="" href="">削除</a> -->
                 </p>
-                
-                <textarea readonly class="comment mb-3 form-control" name="" id="" cols="20" rows="3">コメントコメントコメントコメントコメントコメントコメントコメント</textarea>
-                <div class="mb-3">
+                <textarea readonly class="comment mb-2 form-control" name="" id="" cols="20" rows="3">こんにちは、プロジェクトの進捗を報告します。タスクの進行状況は以下の通りです。
+                </textarea>
+                <!-- <div class="mb-3">
                     <button style="display:none;" class="comment-save btn btn-primary px-3">保存</button>
                     <button class="comment-edit btn btn-primary px-3">編集</button>
-                </div>
+                </div> -->
             </div>
 
-            <div class="mb-5">
-                <textarea class="mb-3 form-control" name="" id="" cols="20" rows="3"></textarea>
-                <div class="mb-3">
+            <div class="comment-wrapper mt-5">
+                <p>
+                    山田太郎
+                    <span class="text-black-50 ps-3">2023/06/03 8:00</span>
+                    <a class="" href="">削除</a>
+                </p>
+                <textarea readonly class="comment form-control mb-2" name="" id="" cols="20" rows="3">現時点では追加の支援は必要ありませんが、進展があればすぐにお知らせします。
+                </textarea>
+                <div class="text-end">
+                    <button style="display:none;" class="comment-save btn btn-primary px-3">保存</button>
+                    <button class="text-end comment-edit btn btn-secondary px-3">編集</button>
+                </div>
+
+            </div>
+
+            <div class="comment-wrapper mt-5">
+                <p>
+                    笹本健
+                    <span class="text-black-50 ps-3">2023/06/03 8:00</span>
+                    <!-- <a class="" href="">削除</a> -->
+                </p>
+                <textarea readonly class="comment mb-2 form-control" name="" id="" cols="20" rows="3">了解しました、ありがとうございます。進捗と問題についての報告、そしてチームメンバーとの協力に感謝します。新しいライブラリの統合がうまく進むことを願っています。もしさらなるサポートや質問があれば、遠慮なくお知らせください。</textarea>
+                <!-- <div class="mb-3">
+                    <button style="display:none;" class="comment-save btn btn-primary px-3">保存</button>
+                    <button class="comment-edit btn btn-primary px-3">編集</button>
+                </div> -->
+            </div>
+            
+            <div class="comment-add-wrapper">
+                <textarea class="comment mb-2 form-control" name="" id="" cols="20" rows="3"></textarea>
+                <div class="mb-3 text-end">
                     <a class="btn btn-primary px-3" href="ticket_create.html">追加</a>
                 </div>
             </div>
+
             <div class="mb-5">
                 <p>要確認 : </p>
                 <ul>
@@ -93,7 +125,7 @@
                 </ul>
             </div>
         </div>
-        <div class="text-end mb-5">
+        <div class="t-del-btn text-end mb-5">
             <button class="btn btn-danger px-3">チケットを削除する</button>
         </div>
         <div class="mt-5 mb-5">
@@ -113,7 +145,7 @@
                         element.readOnly = false;
                     });
                     commentEditBtn[index].style.display = 'none';
-                    commentSaveBtn[index].style.display = 'block';
+                    commentSaveBtn[index].style.display = 'inline-block';
                 });
             });
 
@@ -124,7 +156,7 @@
                         element.readOnly = true;
                     });
                     commentSaveBtn[index].style.display = 'none';
-                    commentEditBtn[index].style.display = 'block';
+                    commentEditBtn[index].style.display = 'inline-block';
                 });
             });
         });
