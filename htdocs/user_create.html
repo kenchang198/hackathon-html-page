@@ -20,7 +20,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">TOP</a></li>
                 <li class="breadcrumb-item"><a href="/users.html">ユーザー一覧</a></li>
-                <li class="breadcrumb-item active" aria-current="page">新規ユーザー作成</li>
+                <li class="breadcrumb-item active" aria-current="page">新規登録</li>
             </ol>
         </nav>
         <form enctype="multipart/form-data" class="mt-5 entry-form" action="/" method="post">
@@ -53,73 +53,12 @@
                 </div>
 
                 <div class="d-flex justify-content-center complete-btn-grp pt-5 mb-5">
-                    <button type="submit" class="btn btn-primary me-3"><b>保存</b></button>
                     <div><a class="text-light btn btn-secondary me-3" href="/"><b>戻る</b></a></div>
+                    <button type="submit" class="btn btn-primary me-3"><b>登録</b></button>
                 </div>
             </div>
         </form>
     </div>
-        <script>
-            // メンバー追加と削除
-            function addMember() {
-                
-                // プルダウンで選択されたメンバーの名前を取得
-                var memberSelect = document.getElementById("member-select");
-                var selectedOption = memberSelect.options[memberSelect.selectedIndex];
-
-                  // value属性のない選択肢は追加できないようにする
-                if (selectedOption.value == 0) {
-                    return;
-                }
-
-                var memberName = selectedOption.text;
-                var memberId = selectedOption.value;
-
-                  // プルダウンで選択されたメンバーの項目を非表示にする
-                selectedOption.style.display = "none";
-
-                // メンバー一覧に追加
-                var memberList = document.getElementsByClassName("member-list")[0];
-                var memberNameDiv = document.createElement("div");
-                memberNameDiv.className = "pb-1 member-name";
-                memberNameDiv.innerHTML = '<span>' + memberName + '</span><input type="hidden" name="user_name[]" class="form-control" value="' + memberId + '"><a class="ps-3" href="javascript:void(0)">削除</a>';
-                memberList.appendChild(memberNameDiv);
-                
-                // 削除ボタンを押したときの処理
-                var deleteBtn = memberNameDiv.getElementsByTagName("a")[0];
-                
-                deleteBtn.onclick = function() {
-                    memberList.removeChild(memberNameDiv);
-                    // 削除されたメンバーの項目を再表示する
-                    selectedOption.style.display = "";
-                    // プルダウンをデフォルトにリセットする
-                    memberSelect.selectedIndex = 0;
-                };
-
-                // プルダウンをデフォルトにリセットする
-                memberSelect.selectedIndex = 0;
-            }
-
-            // 「全選択」チェックボックスの要素を取得
-            var selectAllCheckbox = document.getElementById("select-all");
-
-            // 「全選択」チェックボックスが変更された時の処理
-            selectAllCheckbox.addEventListener("change", function () {
-                var checkboxes = document.querySelectorAll('input[name="user_name[]"]');
-
-                if (selectAllCheckbox.checked) {
-                    // 「全選択」がチェックされた場合、すべてのチェックボックスを選択状態にする
-                    checkboxes.forEach(function (checkbox) {
-                        checkbox.checked = true;
-                    });
-                } else {
-                    // 「全選択」がチェック解除された場合、すべてのチェックボックスの選択を解除する
-                    checkboxes.forEach(function (checkbox) {
-                        checkbox.checked = false;
-                    });
-                }
-            });
-        </script>
 </body>
 
 </html>
